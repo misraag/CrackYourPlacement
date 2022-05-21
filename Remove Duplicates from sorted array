@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int k=1;
+        int point;
+        int pos=1;
+        if (nums.size()==1) return 1;
+        point = nums[0];
+        for(int i=1;i<nums.size();i++){
+            if (nums[i]!=point){
+                point = nums[i];
+                k++;
+                nums[pos] = nums[i];
+                pos++;
+            }
+            else continue;
+        }
+        return k;
+    }
+};
